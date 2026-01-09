@@ -422,7 +422,7 @@
                     
                     // Redirect to topics page after short delay
                     setTimeout(() => {
-                        window.location.href = 'http://127.0.0.1:8001/chose_topics';
+                        window.location.href = '/chose_topics';
                     }, 1000);
                 } else {
                     showError(data.detail || 'Something went wrong. Please try again.');
@@ -445,4 +445,5 @@
         });
     </script>
 </body>
+
 </html>
