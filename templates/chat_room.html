@@ -502,7 +502,7 @@
             }
 
             try {
-                const response = await fetch('http://127.0.0.1:8001/api/me', {
+                const response = await fetch('/api/me', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -529,7 +529,7 @@
         // Load topic info
         async function loadTopicInfo() {
             try {
-                const response = await fetch(`http://127.0.0.1:8001/api/topic/${topicId}`);
+                const response = await fetch(`/api/topic/${topicId}`);
                 if (response.ok) {
                     const topic = await response.json();
                     document.getElementById('topicName').textContent = topic.title;
@@ -546,7 +546,7 @@
         // Load previous messages
         async function loadPreviousMessages() {
             try {
-                const response = await fetch(`http://127.0.0.1:8001/api/chat/${topicId}/messages`);
+                const response = await fetch(`/api/chat/${topicId}/messages`);
                 if (response.ok) {
                     const data = await response.json();
                     if (data.messages && data.messages.length > 0) {
@@ -729,4 +729,5 @@
         initialize();
     </script>
 </body>
+
 </html>
