@@ -531,7 +531,7 @@
             }
 
             try {
-                const response = await fetch('http://127.0.0.1:8001/api/me', {
+                const response = await fetch('/api/me', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -567,7 +567,7 @@
             const token = localStorage.getItem('auth_token');
             
             try {
-                await fetch('http://127.0.0.1:8001/api/logout', {
+                await fetch('/api/logout', {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -584,4 +584,5 @@
         checkAuth();
     </script>
 </body>
+
 </html>
