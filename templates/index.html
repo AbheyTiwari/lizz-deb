@@ -531,7 +531,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="nav-cta" id="navCta" onclick='window.location.href="http://127.0.0.1:8001/auth"'>Let's Debate</button>
+                <button class="nav-cta" id="navCta" onclick='window.location.href="/auth"'>Let's Debate</button>
             </div>
         </div>
     </nav>
@@ -552,7 +552,7 @@
         </p>
         
         <div class="cta-group">
-            <button class="btn-primary" id="mainCta" onclick='window.location.href="http://127.0.0.1:8001/auth"'>Let's Debate</button>
+            <button class="btn-primary" id="mainCta" onclick='window.location.href="/auth"'>Let's Debate</button>
             <button class="btn-secondary">Watch Demo</button>
         </div>
 
@@ -652,7 +652,7 @@
         <div class="cta-box">
             <h2 class="cta-title">Start arguing better.</h2>
             <p class="cta-desc">No signup friction. No payment walls. Just open the app and begin.</p>
-            <button class="btn-primary" id="footerCta" onclick='window.location.href="http://127.0.0.1:8001/auth"'>Let's Debate</button>
+            <button class="btn-primary" id="footerCta" onclick='window.location.href="/auth"'>Let's Debate</button>
         </div>
     </section>
 
@@ -667,7 +667,7 @@
             if (!token) return false;
 
             try {
-                const response = await fetch('http://127.0.0.1:8001/api/me', {
+                const response = await fetch('/api/me', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -720,7 +720,7 @@
                 const token = localStorage.getItem('auth_token');
                 
                 try {
-                    await fetch('http://127.0.0.1:8001/api/logout', {
+                    await fetch('/api/logout', {
                         method: 'POST',
                         headers: {
                             'Authorization': `Bearer ${token}`
@@ -738,4 +738,5 @@
         checkAuth();
     </script>
 </body>
+
 </html>
