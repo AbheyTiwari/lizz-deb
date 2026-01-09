@@ -685,7 +685,7 @@
             topicId = getTopicIdFromUrl();
             
             try {
-                const response = await fetch(`http://127.0.0.1:8001/api/topic/${topicId}`);
+                const response = await fetch(`/api/topic/${topicId}`);
                 if (response.ok) {
                     const topic = await response.json();
                     document.getElementById('topicName').textContent = topic.title;
@@ -1075,7 +1075,7 @@
         }
 
         // Backend API configuration
-        const API_BASE_URL = 'http://127.0.0.1:8001';
+        const API_BASE_URL = const API_BASE_URL = window.location.origin;;
 
         async function speechToText(audioBlob) {
             const formData = new FormData();
@@ -1235,4 +1235,5 @@
         });
     </script>
 </body>
+
 </html>
